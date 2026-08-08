@@ -1,4 +1,4 @@
-<database name="jessejay">
+<database name="djjessejay">
 <!-- Tabelle evenTable -->
 <table name="evenTable">
 <column name="eventID">17</column>
