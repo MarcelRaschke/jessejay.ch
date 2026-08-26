@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DJ Jesse Jay Events - Past and upcoming events, festivals, and club nights">
+    <title>Events :: DJ Jesse Jay</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1><a href="index.html">DJ Jesse Jay</a></h1>
+                <p class="tagline">Progressive Music Attack since 1997</p>
+            </div>
+            
+            <nav class="main-nav">
+                <button class="mobile-menu-toggle" aria-label="Menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-list">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="#bio"><i class="fas fa-user"></i> Biografie</a></li>
+                    <li><a href="events.html" class="active"><i class="fas fa-calendar"></i> Events</a></li>
+                    <li><a href="music.html"><i class="fas fa-music"></i> Musik</a></li>
+                    <li><a href="guestbook.html"><i class="fas fa-book"></i> Gästebuch</a></li>
+                    <li><a href="contact.html"><i class="fas fa-envelope"></i> Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <section class="section page-header">
+            <div class="container">
+                <h1><i class="fas fa-calendar"></i> Events</h1>
+                <p>Hier findest du eine Übersicht über vergangene und zukünftige Auftritte von DJ Jesse Jay.</p>
+            </div>
+        </section>
+
+        <section class="section events-filter">
+            <div class="container">
+                <div class="filter-controls">
+                    <div class="filter-group">
+                        <label for="year-filter">Jahr:</label>
+                        <select id="year-filter">
+                            <option value="all">Alle Jahre</option>
+                            <!-- Years will be populated by JavaScript -->
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="search-filter">Suche:</label>
+                        <input type="text" id="search-filter" placeholder="Event suchen...">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section events-list">
+            <div class="container">
+                <div id="events-container" class="events-grid">
+                    <!-- Events will be loaded from JSON -->
+                    <div class="loading">
+                        <i class="fas fa-spinner fa-spin"></i> Events werden geladen...
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>DJ Jesse Jay</h3>
+                    <p>Progressive Music Attack since 1997</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="music.html">Musik</a></li>
+                        <li><a href="guestbook.html">Gästebuch</a></li>
+                        <li><a href="contact.html">Kontakt</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2003-2024 DJ Jesse Jay & from Zürich</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Load events from JSON
+        fetch('data/events.json')
+            .then(response => response.json())
+            .then(data => {
+                const container = document.getElementById('events-container');
+                const yearFilter = document.getElementById('year-filter');
+                
+                // Extract unique years
+                const years = [...new Set(data.map(e => e.date ? e.date.split('-')[0] : 'Unknown').filter(y => y !== '0000'))].sort().reverse();
+                
+                // Populate year filter
+                years.forEach(year => {
+                    const option = document.createElement('option');
+                    option.value = year;
+                    option.textContent = year;
+                    yearFilter.appendChild(option);
+                });
+                
+                // Render events
+                function renderEvents(filteredData) {
+                    if (filteredData.length === 0) {
+                        container.innerHTML = '<p class="no-results">Keine Events gefunden.</p>';
+                        return;
+                    }
+                    
+                    container.innerHTML = filteredData.map(event => {
+                        const date = event.date ? new Date(event.date).toLocaleDateString('de-DE') : 'Unbekannt';
+                        const eventUrl = event.eventURL ? `<p><a href="${event.eventURL}" target="_blank">Mehr Infos</a></p>` : '';
+                        const lineup = event.lineup ? `<p><strong>Lineup:</strong> ${event.lineup}</p>` : '';
+                        
+                        return `
+                            <article class="event-card">
+                                <div class="event-date">
+                                    <i class="fas fa-calendar-alt"></i> ${date}
+                                </div>
+                                <h3 class="event-title">${event.event || 'Unbekanntes Event'}</h3>
+                                ${lineup}
+                                ${eventUrl}
+                                <p class="event-id">ID: ${event.eventID}</p>
+                            </article>
+                        `;
+                    }).join('');
+                }
+                
+                // Filter functionality
+                function filterEvents() {
+                    const year = yearFilter.value;
+                    const search = document.getElementById('search-filter').value.toLowerCase();
+                    
+                    let filtered = data;
+                    
+                    // Filter by year
+                    if (year !== 'all') {
+                        filtered = filtered.filter(e => e.date && e.date.startsWith(year));
+                    }
+                    
+                    // Filter by search
+                    if (search) {
+                        filtered = filtered.filter(e => 
+                            (e.event && e.event.toLowerCase().includes(search)) ||
+                            (e.lineup && e.lineup.toLowerCase().includes(search)) ||
+                            (e.eventURL && e.eventURL.toLowerCase().includes(search))
+                        );
+                    }
+                    
+                    renderEvents(filtered);
+                }
+                
+                // Initial render
+                renderEvents(data);
+                
+                // Add event listeners
+                yearFilter.addEventListener('change', filterEvents);
+                document.getElementById('search-filter').addEventListener('input', filterEvents);
+            })
+            .catch(error => {
+                console.error('Error loading events:', error);
+                document.getElementById('events-container').innerHTML = '<p class="error">Fehler beim Laden der Events.</p>';
+            });
+    </script>
+</body>
+</html>
