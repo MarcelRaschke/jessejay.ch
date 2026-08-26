@@ -1,0 +1,156 @@
+[
+  {
+    "soundID": "1",
+    "eventID": "10",
+    "style": "josefs ruhe special",
+    "urlAbspielen": "http://195.210.0.134:554/ramgen/lora/archiv/20030502.rm",
+    "urlDownload": ""
+  },
+  {
+    "soundID": "5",
+    "eventID": "27",
+    "style": "Local Progressive",
+    "urlAbspielen": "http://193.192.228.134:554/ramgen/lora/archiv/20030516.rm?start=00:00:00",
+    "urlDownload": ""
+  },
+  {
+    "soundID": "6",
+    "eventID": "28",
+    "style": "progressive",
+    "urlAbspielen": "http://195.210.0.134:554/ramgen/lora/archiv/20030530.rm",
+    "urlDownload": ""
+  },
+  {
+    "soundID": "8",
+    "eventID": "47",
+    "style": "progressive",
+    "urlAbspielen": "http://195.210.0.134:554/lora/archiv/20030822.rm",
+    "urlDownload": ""
+  },
+  {
+    "soundID": "9",
+    "eventID": "38",
+    "style": "progressive",
+    "urlAbspielen": "http://195.210.0.134:554/lora/archiv/20030822.rm",
+    "urlDownload": ""
+  },
+  {
+    "soundID": "10",
+    "eventID": "48",
+    "style": "progressive",
+    "urlAbspielen": "http://195.210.0.134:554/lora/archiv/20030822.rm",
+    "urlDownload": ""
+  },
+  {
+    "soundID": "11",
+    "eventID": "48",
+    "style": "progressive",
+    "urlAbspielen": "http://195.210.0.134:554/lora/archiv/20030822.rm",
+    "urlDownload": ""
+  },
+  {
+    "soundID": "12",
+    "eventID": "49",
+    "style": "progressive",
+    "urlAbspielen": "http://195.210.0.134:554/lora/archiv/20030822.rm",
+    "urlDownload": ""
+  },
+  {
+    "soundID": "13",
+    "eventID": "63",
+    "style": "progressive",
+    "urlAbspielen": "http://195.210.0.134:554/ramgen/lora/archiv/20030919.rm",
+    "urlDownload": ""
+  },
+  {
+    "soundID": "14",
+    "eventID": "65",
+    "style": "progressive",
+    "urlAbspielen": "http://195.210.0.134:554/lora/archiv/20031003.rm?",
+    "urlDownload": ""
+  },
+  {
+    "soundID": "16",
+    "eventID": "71",
+    "style": "SexyProgressive",
+    "urlAbspielen": "http://193.192.228.134:554/ramgen/lora/archiv/20031226.rm?start=00:00:00",
+    "urlDownload": ""
+  },
+  {
+    "soundID": "18",
+    "eventID": "84",
+    "style": "progressive",
+    "urlAbspielen": "http://195.210.0.134:554/ramgen/lora/archiv/20031212.rm?",
+    "urlDownload": ""
+  },
+  {
+    "soundID": "19",
+    "eventID": "87",
+    "style": "JingleBeats",
+    "urlAbspielen": "http://193.192.228.134:554/ramgen/lora/archiv/20031226.rm?start=00:00:00",
+    "urlDownload": ""
+  },
+  {
+    "soundID": "20",
+    "eventID": "97",
+    "style": "progressive",
+    "urlAbspielen": "http://195.210.0.134:554/ramgen/lora/archiv/20040109.rm?",
+    "urlDownload": ""
+  },
+  {
+    "soundID": "22",
+    "eventID": "109",
+    "style": "progressive",
+    "urlAbspielen": "http://195.210.0.134:554/ramgen/lora/archiv/20040305.rm?",
+    "urlDownload": ""
+  },
+  {
+    "soundID": "24",
+    "eventID": "126",
+    "style": "progressive-goa",
+    "urlAbspielen": "http://195.210.0.134:554/ramgen/lora/archiv/20040514.rm?",
+    "urlDownload": ""
+  },
+  {
+    "soundID": "25",
+    "eventID": "128",
+    "style": "Progressive-Tech House",
+    "urlAbspielen": "http://193.192.228.134:554/ramgen/lora/archiv/20040528.rm?start=00:00:00",
+    "urlDownload": ""
+  },
+  {
+    "soundID": "26",
+    "eventID": "162",
+    "style": "progressive",
+    "urlAbspielen": "http://193.192.228.134:554/ramgen/lora/archiv/20040709.rm?start=00:00:00",
+    "urlDownload": ""
+  },
+  {
+    "soundID": "40",
+    "eventID": "821",
+    "style": "5min hiphop 355min electro space",
+    "urlAbspielen": "http://193.192.228.134:554/ramgen/lora/archiv/20100715.rm?start=18:00:00",
+    "urlDownload": ""
+  },
+  {
+    "soundID": "39",
+    "eventID": "816",
+    "style": "elektronisch",
+    "urlAbspielen": "http://193.192.228.134:554/ramgen/lora/archiv/20100701.rm?start=18:00:00",
+    "urlDownload": ""
+  },
+  {
+    "soundID": "41",
+    "eventID": "826",
+    "style": "Progressive-House, Tech-House",
+    "urlAbspielen": "http://a1.soundcloud.com/images/player-overlay.png?ffb13b",
+    "urlDownload": ""
+  },
+  {
+    "soundID": "44",
+    "eventID": "992",
+    "style": "Housemusic",
+    "urlAbspielen": "https://soundcloud.com/jessejay/galaxy-space-night-indian",
+    "urlDownload": ""
+  }
+]

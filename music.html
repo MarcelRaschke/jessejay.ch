@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DJ Jesse Jay Music - Listen to mixes, tracks, and radio shows">
+    <title>Musik :: DJ Jesse Jay</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1><a href="index.html">DJ Jesse Jay</a></h1>
+                <p class="tagline">Progressive Music Attack since 1997</p>
+            </div>
+            
+            <nav class="main-nav">
+                <button class="mobile-menu-toggle" aria-label="Menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-list">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="index.html#bio"><i class="fas fa-user"></i> Biografie</a></li>
+                    <li><a href="events.html"><i class="fas fa-calendar"></i> Events</a></li>
+                    <li><a href="music.html" class="active"><i class="fas fa-music"></i> Musik</a></li>
+                    <li><a href="guestbook.html"><i class="fas fa-book"></i> Gästebuch</a></li>
+                    <li><a href="contact.html"><i class="fas fa-envelope"></i> Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <section class="section page-header">
+            <div class="container">
+                <h1><i class="fas fa-music"></i> Musik</h1>
+                <p>Hier findest du eine Auswahl an Mixes, Radio-Sendungen und Tracks von DJ Jesse Jay.</p>
+            </div>
+        </section>
+
+        <!-- SoundCloud Section -->
+        <section class="section soundcloud">
+            <div class="container">
+                <h2><i class="fab fa-soundcloud"></i> SoundCloud Playlists</h2>
+                <div class="soundcloud-embed">
+                    <iframe width="100%" height="450" scrolling="no" frameborder="no" 
+                            allow="autoplay" 
+                            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1494828904&color=%230e0c69&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- Clipchamp Section -->
+        <section class="section videos">
+            <div class="container">
+                <h2><i class="fas fa-video"></i> Videos</h2>
+                <div class="video-grid">
+                    <div class="video-embed">
+                        <iframe allow="autoplay;" allowfullscreen style="border:none" 
+                                src="https://clipchamp.com/watch/rLiA04F0ofQ/embed" 
+                                width="640" height="360">
+                        </iframe>
+                        <p>Mixed by DJ JesseJay</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Radio Archive Section -->
+        <section class="section radio-archive">
+            <div class="container">
+                <h2><i class="fas fa-broadcast-tower"></i> Radio Archive</h2>
+                <p>Hier findest du eine Auswahl an archivierten Radio-Sendungen von Galaxy Space Night auf Radio LoRa.</p>
+                
+                <div class="filter-controls">
+                    <div class="filter-group">
+                        <label for="style-filter">Stil:</label>
+                        <select id="style-filter">
+                            <option value="all">Alle Stile</option>
+                            <!-- Styles will be populated by JavaScript -->
+                        </select>
+                    </div>
+                </div>
+                
+                <div id="sounds-container" class="sounds-list">
+                    <!-- Sounds will be loaded from JSON -->
+                    <div class="loading">
+                        <i class="fas fa-spinner fa-spin"></i> Sendungen werden geladen...
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>DJ Jesse Jay</h3>
+                    <p>Progressive Music Attack since 1997</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="music.html">Musik</a></li>
+                        <li><a href="guestbook.html">Gästebuch</a></li>
+                        <li><a href="contact.html">Kontakt</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2003-2024 DJ Jesse Jay & from Zürich</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Load sounds from JSON
+        fetch('data/sounds.json')
+            .then(response => response.json())
+            .then(data => {
+                const container = document.getElementById('sounds-container');
+                const styleFilter = document.getElementById('style-filter');
+                
+                // Extract unique styles
+                const styles = [...new Set(data.map(s => s.style).filter(s => s))].sort();
+                
+                // Populate style filter
+                styles.forEach(style => {
+                    const option = document.createElement('option');
+                    option.value = style;
+                    option.textContent = style;
+                    styleFilter.appendChild(option);
+                });
+                
+                // Render sounds
+                function renderSounds(filteredData) {
+                    if (filteredData.length === 0) {
+                        container.innerHTML = '<p class="no-results">Keine Sendungen gefunden.</p>';
+                        return;
+                    }
+                    
+                    container.innerHTML = filteredData.map(sound => {
+                        const playUrl = sound.urlAbspielen ? 
+                            `<a href="${sound.urlAbspielen}" target="_blank" class="btn btn-primary">Abspielen</a>` : 
+                            '<span class="no-url">Kein Stream verfügbar</span>';
+                        
+                        return `
+                            <article class="sound-card">
+                                <div class="sound-header">
+                                    <span class="sound-id">#${sound.soundID}</span>
+                                    <span class="sound-style">${sound.style || 'Unbekannt'}</span>
+                                </div>
+                                <div class="sound-body">
+                                    <p><strong>Event ID:</strong> ${sound.eventID}</p>
+                                    <div class="sound-actions">
+                                        ${playUrl}
+                                    </div>
+                                </div>
+                            </article>
+                        `;
+                    }).join('');
+                }
+                
+                // Filter functionality
+                function filterSounds() {
+                    const style = styleFilter.value;
+                    
+                    let filtered = data;
+                    
+                    // Filter by style
+                    if (style !== 'all') {
+                        filtered = filtered.filter(s => s.style === style);
+                    }
+                    
+                    renderSounds(filtered);
+                }
+                
+                // Initial render
+                renderSounds(data);
+                
+                // Add event listener
+                styleFilter.addEventListener('change', filterSounds);
+            })
+            .catch(error => {
+                console.error('Error loading sounds:', error);
+                document.getElementById('sounds-container').innerHTML = '<p class="error">Fehler beim Laden der Sendungen.</p>';
+            });
+    </script>
+</body>
+</html>

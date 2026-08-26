@@ -1,0 +1,63 @@
+{
+  "title": "DJ Jesse Jay",
+  "since": "1997",
+  "tagline": "The Progressive Music Attack from Zurich",
+  "styles": [
+    "funky-groovy-progressive beats",
+    "prog.-deep-tech",
+    "minimal house",
+    "minimal-maximal-electro-trance",
+    "UK-Tech-House",
+    "UK-Progressive"
+  ],
+  "bio": {
+    "de": {
+      "intro": "DJ Jesse Jay ist ein talentierter DJ, der sich auf House, Techno und Electro spezialisiert hat. Er begann seine Karriere 1997, als er in lokalen Clubs und Bars auflegte. Seitdem hat er sich einen Namen in der Szene gemacht und ist auf vielen Festivals und Events aufgetreten. Er ist bekannt für seine energiegeladenen Sets, die das Publikum zum Tanzen bringen.",
+      "inspiration": "DJ Jesse Jay ist von vielen Künstlern inspiriert, wie Daft Punk, Calvin Harris, David Guetta und Martin Garrix. Er hat auch seinen eigenen Stil entwickelt, der Elemente aus verschiedenen Genres kombiniert. Er experimentiert gerne mit neuen Sounds und Effekten, um seine Musik frisch und spannend zu halten.",
+      "philosophy": "Kennst du das Gefühl: \"DJ.. DJ... Dein Sound heute Abend scheint mir der gleiche zu sein?\" Plötzlich in eine Runde mitgenommen zu werden, bemerkenswertes Erwachen der Leidenschaft: unserer Party-Leidenschaft, Seelen tragende Reisen, Herzensraum, der Horizonte schafft und musikalisch sexy Phantasien entstehen, immer seltener seit geraumer Zeit. So liebt Jesse es, sich der Musik hinzugeben. Und so gibt er seinen Sound und seine Emotionen an die Menge weiter und umarmt sie mit seiner radikalen Sensibilität.",
+      "background": "Jesse wuchs mit einem ansteckenden Party-Gefühl auf. Die Individualität regierte, ohne noch verrückter zu werden und \"wir sind Familie\" philosophierten die legendären Clubs wie Aera, Labyrinth, SpiderGalaxy, Take A Dance, Hermetschloo und Dachkantine.",
+      "radio": "Bei Radio LoRa spielt er seit 2001, alle zwei Wochen bei Galaxy Space Nights 6 Stunden lange, tief zärtliche Urlaubsreise des Geistes, mit seiner zeitlosen, überraschenden Auswahl an Perlen-Tracks. Herzhaften und gleichzeitig pornografischen Sound Geschichten, nahtlos verwoben mit seinen unverwechselbaren DJ-Fähigkeiten. Er gibt die gleiche Dimension der Bedeutung zu Beginn, als Hauptact oder das Outro seit 1997. Ein treuer Vinyl-Liebhaber, der auch mit dem CDJ vergnügt."
+    },
+    "en": {
+      "intro": "DJ Jesse Jay has been delivering the finest progressive music experience since 1997. With a passion for music and a unique selection of tracks, he creates soulful, heartwarming journeys that embrace the crowd with his radical sensitivity.",
+      "inspiration": "Jesse grew up surrounded by infectious party vibes and legendary clubs in Zürich. He continues to share his sound and emotions with the audience, leaving them with unforgettable musical memories.",
+      "philosophy": "Do you know the feeling of an unconditional, passionate music trip? That's how Jesse loves to feel when giving himself to the music and this is how he passes on his sound and emotions to the crowd, embracing with his radical sensitiveness.",
+      "background": "Jesse grew up in his contagious party senses at the individuality-reigning, going mad and \"we are family\" philosophical, legendary Clubs like Aera, Labyrinth, SpiderGalaxy, Take A Dance, Hermetschloo and Dachkantine.",
+      "radio": "At Radio Lora he plays each two weeks since 15 years at Galaxy Space Nights 6 hours long, deep-tender holidays of the mind with his timeless, surprising choice of pearl-tracks, heartful and at the same time porno stories, seamlessly woven with his distinctive DJ's skills. He gives the same dimension of importance to play at the beginning, as a main act or the outro since 1997. A loyal Vinyl Lover, equally pleasing with the CDJ."
+    }
+  },
+  "radioShows": [
+    {
+      "name": "Galaxy Space Night",
+      "station": "Radio LoRa (Zürich)",
+      "frequency": "97.5 MHz",
+      "schedule": "Every second Thursday from midnight to 6 a.m.",
+      "since": "2001",
+      "url": "http://www.123galaxy.ch",
+      "description": "6 hours of deep-tender holidays of the mind with timeless, surprising choice of pearl-tracks"
+    },
+    {
+      "name": "Galaxy Space Night",
+      "station": "Radio Stadtfilter (Winterthur)",
+      "description": "Electronic music show"
+    },
+    {
+      "name": "Galaxy Space Night",
+      "station": "Radio RaBe (Bern)",
+      "description": "Legendary electronic music show"
+    }
+  ],
+  "social": {
+    "facebook": "https://www.facebook.com/djjessejay",
+    "twitter": "https://www.twitter.com/djjessejay",
+    "instagram": "https://www.instagram.com/djjessejay",
+    "youtube": "https://www.youtube.com/djjessejay",
+    "spotify": "https://www.spotify.com/djjessejay",
+    "soundcloud": "https://soundcloud.com/jessejay"
+  },
+  "contact": {
+    "email": "",
+    "phone": ""
+  },
+  "copyright": "© 2003-2024 DJ Jesse Jay & from Zürich"
+}
