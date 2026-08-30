@@ -107,10 +107,10 @@ Beiträge sind willkommen! Bitte beachte:
 
 Diese Website ist Open Source und steht unter der **Apache License 2.0**.
 
-© 2003-2024 DJ Jesse Jay & from Zürich
+© 2003-2026 DJ Jesse Jay & TwoDivision & @®† from Zürich
 
 ---
 
-**Kontakt**: [E-Mail](mailto:komm@bald) | **Website**: [jessejay.ch](https://jessejay.ch)
+**Kontakt**: [E-Mail](mailto:info@djjessejay.ch) | **Website**: [djjessejay.ch](https://djjessejay.ch)
 
 *Made with ❤️ and Progressive Music*
