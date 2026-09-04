@@ -107,7 +107,7 @@ Beiträge sind willkommen! Bitte beachte:
 
 Diese Website ist Open Source und steht unter der **Apache License 2.0**.
 
-© 2003-2026 DJ Jesse Jay & TwoDivision & @®† from Zürich
+© 2003-2025 DJ Jesse Jay & TwoDivision from Zürich
 
 ---
 
