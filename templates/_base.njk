@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ description | default('DJ Jesse Jay - Progressive Music Attack since 1997') }}">
+    <title>{{ title | default('DJ Jesse Jay') }}</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1><a href="index.html">DJ Jesse Jay</a></h1>
+                <p class="tagline">Progressive Music Attack since 1997</p>
+            </div>
+            
+            <nav class="main-nav">
+                <button class="mobile-menu-toggle" aria-label="Menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-list">
+                    <li><a href="index.html" {% if page.url == '/index.html' %}class="active"{% endif %}><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="index.html#bio"><i class="fas fa-user"></i> Biografie</a></li>
+                    <li><a href="events.html" {% if page.url == '/events.html' %}class="active"{% endif %}><i class="fas fa-calendar"></i> Events</a></li>
+                    <li><a href="music.html" {% if page.url == '/music.html' %}class="active"{% endif %}><i class="fas fa-music"></i> Musik</a></li>
+                    <li><a href="guestbook.html" {% if page.url == '/guestbook.html' %}class="active"{% endif %}><i class="fas fa-book"></i> Gästebuch</a></li>
+                    <li><a href="contact.html" {% if page.url == '/contact.html' %}class="active"{% endif %}><i class="fas fa-envelope"></i> Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        {{ content | safe }}
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>DJ Jesse Jay</h3>
+                    <p>Progressive Music Attack since 1997</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="music.html">Musik</a></li>
+                        <li><a href="guestbook.html">Gästebuch</a></li>
+                        <li><a href="contact.html">Kontakt</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2003-2025 DJ Jesse Jay & TwoDivision from Zürich</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    {% if page.url == '/events.html' %}
+    <script src="js/events.js"></script>
+    {% endif %}
+    {% if page.url == '/guestbook.html' %}
+    <script src="js/guestbook.js"></script>
+    {% endif %}
+    {% if page.url == '/music.html' %}
+    <script src="js/music.js"></script>
+    {% endif %}
+</body>
+</html>

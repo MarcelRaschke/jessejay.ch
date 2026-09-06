@@ -1,0 +1,39 @@
+# Dependencies
+node_modules/
+
+# Eleventy output
+_site/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Backup files
+*.bak
+*.backup
+backup-*.tar.gz
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Generated files (wird von GitHub Actions generiert)
+# sitemap.xml
+# robots.txt
+data/events-cleaned.json
+data/url-validation-report.json
+
+# Build artifacts
+/dist/
+/build/

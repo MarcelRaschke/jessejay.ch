@@ -1,0 +1,48 @@
+name: Lint Code
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - '*.html'
+      - 'css/**'
+      - 'js/**'
+      - 'scripts/**'
+  pull_request:
+    branches: ["main"]
+  workflow_dispatch:
+
+jobs:
+  lint:
+    name: Lint HTML, CSS & JavaScript
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: |
+          npm install
+      
+      - name: Lint HTML
+        run: |
+          npm run lint:html || echo "HTML Linting found issues"
+      
+      - name: Lint CSS
+        run: |
+          npm run lint:css || echo "CSS Linting found issues"
+      
+      - name: Lint JavaScript
+        run: |
+          npm run lint:js || echo "JavaScript Linting found issues"
+      
+      - name: Check JSON formatting
+        run: |
+          npm run format:json -- --check || echo "JSON formatting issues found"

@@ -1,0 +1,54 @@
+{
+  "name": "dj-jesse-jay-website",
+  "version": "1.0.0",
+  "description": "DJ Jesse Jay - Progressive Music Attack since 1997",
+  "main": "js/main.js",
+  "scripts": {
+    "clean:events": "node scripts/clean-events.js",
+    "validate:urls": "node scripts/validate-urls.js",
+    "generate:sitemap": "node scripts/generate-sitemap.js",
+    "format:json": "prettier --write \"data/**/*.json\"",
+    "lint:html": "htmlhint **/*.html",
+    "lint:css": "stylelint css/**/*.css",
+    "lint:js": "eslint js/**/*.js scripts/**/*.js",
+    "lint": "npm run lint:html && npm run lint:css && npm run lint:js",
+    "build": "npm run clean:events && npm run generate:sitemap",
+    "build:full": "npm run clean:events && npm run validate:urls && npm run generate:sitemap && npm run format:json",
+    "start": "npx serve .",
+    "dev": "npx serve . --cors --port 8000"
+  },
+  "keywords": [
+    "DJ",
+    "Jesse Jay",
+    "Progressive",
+    "House",
+    "Techno",
+    "Electro",
+    "Music",
+    "Zurich"
+  ],
+  "author": "DJ Jesse Jay & TwoDivision",
+  "license": "Apache-2.0",
+  "homepage": "https://djjessejay.ch",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MarcelRaschke/jessejay.ch.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MarcelRaschke/jessejay.ch/issues"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "axios": "^1.6.2",
+    "eslint": "^8.56.0",
+    "htmlhint": "^1.1.4",
+    "prettier": "^3.2.5",
+    "serve": "^14.2.1",
+    "stylelint": "^16.2.1",
+    "stylelint-config-standard": "^36.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

@@ -1,0 +1,136 @@
+name: Automate Repetitive Tasks
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - 'data/**'
+      - 'scripts/**'
+      - '.eleventy.js'
+      - 'templates/**'
+      - 'package.json'
+  pull_request:
+    branches: ["main"]
+  schedule:
+    # Jeden Montag um 02:00 Uhr (UTC) - wenn Server in CH: 03:00/04:00
+    - cron: '0 2 * * 1'
+  workflow_dispatch:
+
+concurrency:
+  group: "automate"
+  cancel-in-progress: false
+
+jobs:
+  validate-and-generate:
+    name: Validate Data & Generate Assets
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: |
+          npm install
+      
+      - name: Clean and validate events data
+        run: |
+          npm run clean:events
+      
+      - name: Validate URLs
+        run: |
+          npm run validate:urls || echo "URL validation found issues - check report"
+      
+      - name: Generate Sitemap and robots.txt
+        run: |
+          npm run generate:sitemap
+      
+      - name: Format JSON files
+        run: |
+          npm run format:json
+      
+      - name: Commit changes
+        run: |
+          git config --global user.name "Automation Bot"
+          git config --global user.email "bot@jessejay.ch"
+          git add .
+          
+          # Prüfe, ob es Änderungen gibt
+          if ! git diff --cached --quiet; then
+            git commit -m "Automated: Data cleanup, HTML generation, sitemap update [skip ci]"
+            git push
+          else
+            echo "Keine Änderungen zum Committen"
+          fi
+
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: validate-and-generate
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Install Eleventy
+        run: |
+          npm install @11ty/eleventy
+      
+      - name: Build with Eleventy
+        run: |
+          npx @11ty/eleventy --input=. --output=_site
+      
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+      
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '_site'
+      
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+  backup:
+    name: Create Backup
+    needs: validate-and-generate
+    runs-on: ubuntu-latest
+    if: github.event_name == 'schedule'
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Create backup archive
+        run: |
+          tar -czvf backup-$(date +%Y-%m-%d).tar.gz data/
+      
+      - name: Upload backup as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: data-backup
+          path: backup-*.tar.gz
+          retention-days: 30
