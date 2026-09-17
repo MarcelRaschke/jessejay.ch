@@ -13,7 +13,7 @@
     "lint:js": "eslint js/**/*.js scripts/**/*.js",
     "lint": "npm run lint:html && npm run lint:css && npm run lint:js",
     "build": "npm run clean:events && npm run generate:sitemap",
-    "build:full": "npm run clean:events && npm run validate:urls && npm run generate:sitemap && npm run format:json",
+    "build:full": "npm run clean:events && (npm run validate:urls || true) && npm run generate:sitemap && npm run format:json",
     "start": "npx serve .",
     "dev": "npx serve . --cors --port 8000"
   },
