@@ -1,0 +1,10 @@
+Font Awesome Free 6.7.2 - https://fontawesome.com
+
+Locally hosted subset of the icons used by jessejay.ch (see assets/fonts/css/fontawesome.min.css).
+
+License - https://fontawesome.com/license/free
+  Icons: CC BY 4.0
+  Fonts: SIL OFL 1.1
+  Code:  MIT License
+
+Copyright 2024 Fonticons, Inc.

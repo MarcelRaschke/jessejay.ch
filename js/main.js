@@ -126,6 +126,17 @@ domReady(function() {
     // Console welcome message
     console.log('%c DJ Jesse Jay ', 'background: #0e0c69; color: white; font-size: 20px; padding: 10px;');
     console.log('%c Progressive Music Attack since 1997 ', 'color: #0e0c69; font-size: 14px;');
+    
+    // Register Service Worker for offline functionality
+    if ('serviceWorker' in navigator && (window.location.protocol === 'https:' || window.location.hostname === 'localhost')) {
+        window.addEventListener('load', function() {
+            navigator.serviceWorker.register('sw.js').then(function(registration) {
+                console.log('[SW] registriert, Scope:', registration.scope);
+            }).catch(function(error) {
+                console.warn('[SW] Registrierung fehlgeschlagen:', error);
+            });
+        });
+    }
 });
 
 // Utility functions
