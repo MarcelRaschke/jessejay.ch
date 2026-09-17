@@ -135,22 +135,21 @@ npm run validate:urls
 
 **Beispiel-Ausgabe:**
 ```
-🔍 Überprüfe 44 Sounds auf gültige URLs...
+🔍 Überprüfe 22 Sounds auf gültige URLs...
 ✅ Sound #44: https://soundcloud.com/jessejay/galaxy-space-night-indian (200)
 ❌ Sound #1: http://195.210.0.134:554/ramgen/lora/archiv/20030502.rm - Timeout
-✅ Sound #41: https://a1.soundcloud.com/images/player-overlay.png?ffb13b (200)
 
 📊 Sounds-Statistik:
-   - Gültige URLs: 2
-   - Ungültige/fehlende URLs: 42
+   - Gültige URLs: 1
+   - Ungültige/fehlende URLs: 21
 
-🔍 Überprüfe 45 Bilder...
-✅ Bild #1: _2003-03-28_klubex/DSC02839.jpg (existiert)
+🔍 Überprüfe 25 Bilder...
+❌ Bild #1: _2003-03-28_klubex/DSC02839.jpg (nicht gefunden)
 ❌ Bild #15: _2003-03-28_klubex/maggie_felix.jpg (nicht gefunden)
 
 📊 Bilder-Statistik:
-   - Vorhandene Bilder: 10
-   - Fehlende/ungültige Bilder: 35
+   - Vorhandene Bilder: 0
+   - Fehlende/ungültige Bilder: 25
 ```
 
 ---
