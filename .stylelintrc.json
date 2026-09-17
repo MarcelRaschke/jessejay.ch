@@ -1,0 +1,15 @@
+{
+  "extends": "stylelint-config-standard",
+  "rules": {
+    "at-rule-no-unknown": null,
+    "no-descending-specificity": null,
+    "selector-class-pattern": null,
+    "color-hex-length": null,
+    "value-keyword-case": null,
+    "color-function-notation": null,
+    "alpha-value-notation": null,
+    "media-feature-range-notation": null,
+    "no-duplicate-selectors": [true, { "severity": "warning" }]
+  },
+  "ignoreFiles": ["node_modules/**", "_site/**", "dist/**", "build/**"]
+}

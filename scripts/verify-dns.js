@@ -103,7 +103,7 @@ async function checkNameservers() {
         console.log(
             delegated
                 ? `   → Nameserver delegieren an Cloudflare (${cloudflareNs.join(', ')})`
-                : `   → Nameserver delegieren NICHT an Cloudflare (noch Hosttech?)`
+                : '   → Nameserver delegieren NICHT an Cloudflare (noch Hosttech?)'
         );
 
         return {
@@ -141,7 +141,7 @@ async function checkARecords(host) {
             console.log(
                 proxied
                     ? `   ✅ Cloudflare-Proxy aktiv (${inCloudflare.length} Cloudflare-IPs)`
-                    : `   ⚠️  Kein Cloudflare-Proxy (keine Cloudflare-IPs gefunden)`
+                    : '   ⚠️  Kein Cloudflare-Proxy (keine Cloudflare-IPs gefunden)'
             );
         }
 
@@ -169,8 +169,8 @@ async function checkHttps(url) {
         console.log(`   ✅ HTTP ${response.status} (Server: ${server})`);
         console.log(
             isCloudflare
-                ? `   ☁️  Antwort kommt über Cloudflare`
-                : `   ℹ️  Server-Header ohne Cloudflare-Hinweis (Proxy evtl. nicht aktiv)`
+                ? '   ☁️  Antwort kommt über Cloudflare'
+                : '   ℹ️  Server-Header ohne Cloudflare-Hinweis (Proxy evtl. nicht aktiv)'
         );
         return { url, ok: true, status: response.status, server, isCloudflare };
     } catch (error) {
@@ -239,13 +239,13 @@ async function main() {
     console.log('\n────────────────────────── Zusammenfassung ──────────────────────────');
     console.log(
         report.summary.nsDelegatedToCloudflare
-            ? `✅ Nameserver → Cloudflare`
-            : `⚠️  Nameserver → noch NICHT Cloudflare`
+            ? '✅ Nameserver → Cloudflare'
+            : '⚠️  Nameserver → noch NICHT Cloudflare'
     );
     console.log(
         report.summary.proxiedHosts.length > 0
             ? `✅ Proxy aktiv für: ${report.summary.proxiedHosts.join(', ')}`
-            : `⚠️  Kein Cloudflare-Proxy erkannt (DNS-Propagation evtl. noch läuft)`
+            : '⚠️  Kein Cloudflare-Proxy erkannt (DNS-Propagation evtl. noch läuft)'
     );
     console.log(
         report.summary.apiPointsToOrigin
@@ -255,7 +255,7 @@ async function main() {
     console.log(
         report.summary.httpsOk.length > 0
             ? `✅ HTTPS erreichbar: ${report.summary.httpsOk.join(', ')}`
-            : `❌ Kein HTTPS-Endpunkt erreichbar`
+            : '❌ Kein HTTPS-Endpunkt erreichbar'
     );
 
     const fullyOk =
