@@ -20,6 +20,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('*.svg');
   eleventyConfig.addPassthroughCopy('*.mov');
   eleventyConfig.addPassthroughCopy('*.swf');
+  eleventyConfig.addPassthroughCopy('*.webp');
+  eleventyConfig.addPassthroughCopy('sw.js');
+  eleventyConfig.addPassthroughCopy('assets');
   eleventyConfig.addPassthroughCopy('sitemap.xml');
   eleventyConfig.addPassthroughCopy('robots.txt');
   
