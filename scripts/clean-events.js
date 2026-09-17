@@ -92,7 +92,7 @@ function cleanEvents() {
     // Überschreibe auch die Originaldatei
     fs.writeFileSync(eventsPath, JSON.stringify(cleanedEvents, null, 2), 'utf8');
     
-    console.log(`✅ Bereinigung abgeschlossen!`);
+    console.log('✅ Bereinigung abgeschlossen!');
     console.log(`   - ${events.length} Events verarbeitet`);
     console.log(`   - ${cleanedEvents.length} Events behalten`);
     console.log(`   - Ausgabe: ${outputPath}`);
