@@ -96,7 +96,7 @@ function generateSitemap() {
 `;
     });
     
-    xml += `</urlset>`;
+    xml += '</urlset>';
     
     // Speichere sitemap.xml
     const sitemapPath = path.join(__dirname, '..', 'sitemap.xml');

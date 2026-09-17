@@ -33,6 +33,7 @@ backup-*.tar.gz
 # robots.txt
 data/events-cleaned.json
 data/url-validation-report.json
+data/dns-verification-report.json
 
 # Build artifacts
 /dist/

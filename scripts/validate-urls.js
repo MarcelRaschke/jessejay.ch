@@ -85,7 +85,7 @@ async function validateSounds() {
         }
     }
     
-    console.log(`\n📊 Sounds-Statistik:`);
+    console.log('\n📊 Sounds-Statistik:');
     console.log(`   - Gültige URLs: ${validCount}`);
     console.log(`   - Ungültige/fehlende URLs: ${invalidCount}`);
     
@@ -131,7 +131,7 @@ async function validateImages() {
         }
     }
     
-    console.log(`\n📊 Bilder-Statistik:`);
+    console.log('\n📊 Bilder-Statistik:');
     console.log(`   - Vorhandene Bilder: ${validCount}`);
     console.log(`   - Fehlende/ungültige Bilder: ${invalidCount}`);
     
