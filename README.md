@@ -49,14 +49,16 @@ jessejay.ch/
 - **CSS3** mit Flexbox, Grid und responsivem Design
 - **Vanilla JavaScript** (keine Frameworks, pure Performance)
 - **JSON** für Datenspeicherung
-- **Font Awesome** für Icons
+- **Font Awesome** lokal gehostet (Subset in `assets/fonts/`)
+- **Service Worker** für Offline-Funktionalität (`sw.js`)
+- **WebP**-Bilder + Brotli/Vorkomprimierung (siehe [PERFORMANCE.md](PERFORMANCE.md))
 
 ### Features
 - ✅ Vollständig responsiv (Mobile-First)
 - ✅ Barrierefrei (WCAG 2.1 AA)
 - ✅ SEO-optimiert
 - ✅ Schnelle Ladezeiten
-- ✅ Offline-fähig (statische Dateien)
+- ✅ Offline-fähig (Service Worker + statische Dateien)
 
 ## 🚀 Lokale Entwicklung
 
@@ -95,6 +97,16 @@ Beiträge sind willkommen! Bitte beachte:
 1. **Code of Conduct**: [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
 2. **Contributing Guidelines**: [CONTRIBUTING.md](CONTRIBUTING.md)
 3. **Pull Requests** sind willkommen
+
+### Performance-Optimierung
+
+Siehe [PERFORMANCE.md](PERFORMANCE.md) für Details zu WebP-Konvertierung,
+lokal gehostetem Font Awesome, Service Worker, Brotli-Komprimierung und CDN.
+
+```bash
+npm run build:webp        # Rasterbilder -> WebP
+npm run build:compress    # Vorkomprimierte .br/.gz Assets (fuer eigenes Hosting)
+```
 
 ### Mögliche Beiträge
 - Design-Verbesserungen
