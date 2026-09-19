@@ -1,0 +1,13 @@
+# RAG & Vektordatenbanken
+faiss-cpu==1.7.4
+sentence-transformers==2.2.2
+chromadb==0.4.22
+pymupdf==1.23.5
+beautifulsoup4==4.12.2
+rank-bm25==0.2.2
+numpy==1.26.0
+requests==2.31.0
+
+# MCP-Server
+mcp>=1.0
+httpx>=0.27
