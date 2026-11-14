@@ -40,7 +40,9 @@
   "bugs": {
     "url": "https://github.com/MarcelRaschke/jessejay.ch/issues"
   },
-  "dependencies": {},
+  "dependencies": {
+    "express": "^5.3.0"
+  },
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
     "axios": "^1.6.2",
