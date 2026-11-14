@@ -649,6 +649,73 @@ p {
 }
 
 /* ============================================
+   Setlist (Music Page)
+   ============================================ */
+
+.setlist-section p {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+    color: var(--text-light);
+}
+
+.set-card {
+    background: var(--gray-light);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-large);
+    border-left: 4px solid var(--secondary-color);
+    box-shadow: var(--shadow);
+}
+
+.set-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-small);
+    margin-bottom: var(--spacing-large);
+}
+
+.set-header h3 {
+    color: var(--primary-color);
+    font-size: var(--font-size-large);
+}
+
+.set-style {
+    font-weight: 600;
+    color: var(--primary-color);
+    font-size: var(--font-size-small);
+    background: var(--accent-color);
+    padding: 4px 10px;
+    border-radius: var(--border-radius);
+}
+
+.set-blocks {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--spacing-large);
+}
+
+.set-block h4 {
+    color: var(--primary-light);
+    margin-bottom: var(--spacing-small);
+    border-bottom: 1px solid var(--gray);
+    padding-bottom: var(--spacing-small);
+}
+
+.tracklist {
+    list-style-position: inside;
+}
+
+.tracklist li {
+    padding: 4px 0;
+    font-size: var(--font-size-small);
+}
+
+.track-artist {
+    font-weight: 600;
+}
+
+/* ============================================
    Contact Page
    ============================================ */
 .contact-form {
