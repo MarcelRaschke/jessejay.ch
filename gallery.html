@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DJ Jesse Jay Galerie & Diashow - Premium Slideshow und Kanban-Board mit Fotos und Videos aus dem Album 'Dj JESSE JAY since 1997'.">
+    <meta name="keywords" content="DJ Jesse Jay, Galerie, Fotos, Diashow, Slideshow, Google Photos, Zürich, Club, Party">
+    <meta name="author" content="DJ Jesse Jay">
+    <title>Galerie &amp; Diashow :: DJ Jesse Jay</title>
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="DJ Jesse Jay - Galerie & Diashow">
+    <meta property="og:description" content="Premium Diashow und Kanban-Board mit Fotos und Videos seit 1997">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://djjessejay.ch/gallery.html">
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Font Awesome (local subset) -->
+    <link rel="preload" as="style" href="assets/fonts/css/fontawesome.min.css">
+    <link rel="stylesheet" href="assets/fonts/css/fontawesome.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1><a href="index.html">DJ Jesse Jay</a></h1>
+                <p class="tagline">Progressive Music Attack since 1997</p>
+            </div>
+
+            <nav class="main-nav">
+                <button class="mobile-menu-toggle" aria-label="Menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-list">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="index.html#bio"><i class="fas fa-user"></i> Biografie</a></li>
+                    <li><a href="events.html"><i class="fas fa-calendar"></i> Events</a></li>
+                    <li><a href="music.html"><i class="fas fa-music"></i> Musik</a></li>
+                    <li><a href="gallery.html" class="active"><i class="fas fa-images"></i> Galerie</a></li>
+                    <li><a href="guestbook.html"><i class="fas fa-book"></i> Gästebuch</a></li>
+                    <li><a href="contact.html"><i class="fas fa-envelope"></i> Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <section class="section page-header">
+            <div class="container">
+                <h1><i class="fas fa-images"></i> Galerie &amp; Diashow</h1>
+                <p>
+                    Premium-Diaschau mit Fotos und Videos aus dem geteilten Album
+                    <strong id="album-title">„Dj JESSE JAY since 1997“</strong>
+                    <span id="album-period">(18.06.2004 – 12.11.2026)</span>.
+                    Wähle zwischen der Diashow-Ansicht und dem Kanban-Board, um die Favoriten zu sortieren.
+                </p>
+                <p>
+                    <a id="album-link" class="btn btn-secondary" href="https://photos.google.com/share/AF1QipOMO3YixexnAU0_ypFzNonjuA6zzJuVuueEwsG0yO30x0akZjsCRaHH69MX2uYbiw?key=TnRyVnZQSXctZ3k1c0RFQ3Z3bzQzTFpmSTliUkNB" target="_blank" rel="noopener">
+                        <i class="fab fa-google"></i> Album auf Google Photos öffnen
+                    </a>
+                </p>
+            </div>
+        </section>
+
+        <section class="section gallery-controls">
+            <div class="container">
+                <div class="controls-bar">
+                    <div class="view-toggle" role="group" aria-label="Ansicht wählen">
+                        <button type="button" id="view-grid" class="btn view-btn active" aria-pressed="true">
+                            <i class="fas fa-th-large"></i> Diashow
+                        </button>
+                        <button type="button" id="view-kanban" class="btn view-btn" aria-pressed="false">
+                            <i class="fas fa-columns"></i> Kanban
+                        </button>
+                    </div>
+                    <div class="filter-group">
+                        <label for="gallery-search">Suche:</label>
+                        <input type="search" id="gallery-search" placeholder="Titel oder Beschreibung...">
+                    </div>
+                    <div class="filter-group">
+                        <label for="category-filter">Kategorie:</label>
+                        <select id="category-filter">
+                            <option value="all">Alle Kategorien</option>
+                        </select>
+                    </div>
+                    <button type="button" id="start-slideshow" class="btn btn-primary">
+                        <i class="fas fa-play"></i> Diashow starten
+                    </button>
+                    <button type="button" id="reset-board" class="btn btn-secondary hidden">
+                        <i class="fas fa-undo"></i> Board zurücksetzen
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="section gallery-view">
+            <div class="container">
+                <div id="gallery-grid" class="gallery-grid">
+                    <div class="loading">
+                        <i class="fas fa-spinner fa-spin"></i> Galerie wird geladen...
+                    </div>
+                </div>
+                <div id="kanban-board" class="kanban-board hidden" aria-label="Kanban-Board"></div>
+                <p id="gallery-empty" class="no-results hidden">Keine Fotos gefunden.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Lightbox / Diashow -->
+    <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Diashow" hidden>
+        <div class="lightbox-backdrop" data-close></div>
+        <div class="lightbox-stage" id="lightbox-stage">
+            <figure class="lightbox-figure">
+                <div class="lightbox-media" id="lightbox-media"></div>
+                <figcaption class="lightbox-caption">
+                    <span class="lightbox-title" id="lightbox-title"></span>
+                    <span class="lightbox-desc" id="lightbox-desc"></span>
+                </figcaption>
+            </figure>
+
+            <div class="lightbox-counter" id="lightbox-counter">1 / 1</div>
+            <div class="lightbox-progress" aria-hidden="true">
+                <div class="lightbox-progress-bar" id="lightbox-progress-bar"></div>
+            </div>
+
+            <button type="button" class="lightbox-btn lightbox-close" id="lightbox-close" aria-label="Diashow schließen">
+                <i class="fas fa-times"></i>
+            </button>
+            <button type="button" class="lightbox-btn lightbox-prev" id="lightbox-prev" aria-label="Vorheriges Medium">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button type="button" class="lightbox-btn lightbox-next" id="lightbox-next" aria-label="Nächstes Medium">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+
+            <div class="lightbox-actions">
+                <button type="button" class="lightbox-btn" id="lightbox-play" aria-label="Autoplay starten" title="Autoplay (Leertaste)">
+                    <i class="fas fa-play"></i>
+                </button>
+                <button type="button" class="lightbox-btn" id="lightbox-fullscreen" aria-label="Vollbild" title="Vollbild (F)">
+                    <i class="fas fa-expand"></i>
+                </button>
+                <button type="button" class="lightbox-btn" id="lightbox-share" aria-label="Link kopieren" title="Link zu diesem Foto kopieren">
+                    <i class="fas fa-share-alt"></i>
+                </button>
+                <a class="lightbox-btn" id="lightbox-download" href="#" download aria-label="Herunterladen" title="Herunterladen">
+                    <i class="fas fa-download"></i>
+                </a>
+            </div>
+
+            <div class="lightbox-thumbs" id="lightbox-thumbs" aria-label="Thumbnails"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>DJ Jesse Jay</h3>
+                    <p>Progressive Music Attack since 1997</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="music.html">Musik</a></li>
+                        <li><a href="gallery.html">Galerie</a></li>
+                        <li><a href="guestbook.html">Gästebuch</a></li>
+                        <li><a href="contact.html">Kontakt</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2003-2026 DJ Jesse Jay & TwoDivision from Zürich</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/gallery.js"></script>
+</body>
+</html>

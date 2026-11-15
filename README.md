@@ -17,6 +17,7 @@ Diese Website bietet:
 - **📖 Biografie**: Informationen über meine musikalische Reise seit 1997
 - **📅 Events**: Übersicht über vergangene und zukünftige Auftritte
 - **🎶 Musik**: SoundCloud-Playlists und Radio-Archive
+- **🖼️ Galerie & Diashow**: Premium-Diaschau mit Kanban-Board (Fotos & Videos)
 - **📝 Gästebuch**: Nachrichten von Fans und Freunden
 - **📧 Kontakt**: Möglichkeiten zur Kontaktaufnahme
 
@@ -28,6 +29,7 @@ jessejay.ch/
 ├── index.html          # Startseite mit Biografie
 ├── events.html         # Veranstaltungen
 ├── music.html          # Musik und Streams
+├── gallery.html        # Galerie & Diashow (Premium Slideshow + Kanban)
 ├── guestbook.html      # Gästebuch-Einträge
 ├── contact.html        # Kontaktformular
 ├── css/
@@ -39,7 +41,8 @@ jessejay.ch/
 │   ├── events.json     # Event-Daten
 │   ├── guestbook.json  # Gästebuch-Einträge
 │   ├── sounds.json     # Radio-Stream-Daten
-│   └── images.json     # Bild-Daten
+│   ├── images.json     # Bild-Daten
+│   └── photos.json     # Galerie-/Diaschau-Daten
 └── assets/
     └── images/         # Bilder und Logos
 ```

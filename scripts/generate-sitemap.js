@@ -24,6 +24,7 @@ function generateSitemap() {
         { url: '/index.html', changefreq: 'daily', priority: 1.0 },
         { url: '/events.html', changefreq: 'weekly', priority: 0.8 },
         { url: '/music.html', changefreq: 'weekly', priority: 0.8 },
+        { url: '/gallery.html', changefreq: 'weekly', priority: 0.8 },
         { url: '/guestbook.html', changefreq: 'monthly', priority: 0.7 },
         { url: '/contact.html', changefreq: 'monthly', priority: 0.7 },
     ];
