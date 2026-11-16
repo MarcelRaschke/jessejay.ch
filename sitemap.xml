@@ -21,6 +21,11 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://djjessejay.ch/gallery.html</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://djjessejay.ch/guestbook.html</loc>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>

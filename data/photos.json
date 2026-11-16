@@ -1,0 +1,78 @@
+{
+  "album": {
+    "title": "Dj JESSE JAY since 1997",
+    "period": "18.06.2004 - 12.11.2026",
+    "url": "https://photos.google.com/share/AF1QipOMO3YixexnAU0_ypFzNonjuA6zzJuVuueEwsG0yO30x0akZjsCRaHH69MX2uYbiw?key=TnRyVnZQSXctZ3k1c0RFQ3Z3bzQzTFpmSTliUkNB",
+    "description": "Geteiltes Google-Photos-Album mit Fotos und Videos aus ueber 20 Jahren DJ Jesse Jay."
+  },
+  "columns": [
+    {
+      "id": "backlog",
+      "title": "Backlog / Neu",
+      "icon": "fa-inbox"
+    },
+    {
+      "id": "auswahl",
+      "title": "Auswahl",
+      "icon": "fa-star"
+    },
+    {
+      "id": "diashow",
+      "title": "In der Diashow",
+      "icon": "fa-play"
+    },
+    {
+      "id": "archiv",
+      "title": "Archiv",
+      "icon": "fa-box-archive"
+    }
+  ],
+  "photos": [
+    {
+      "id": "dj-pult",
+      "type": "image",
+      "src": "DJPult.webp",
+      "thumb": "DJPult.webp",
+      "title": "DJ-Pult",
+      "category": "Studio",
+      "date": "2004-06-18",
+      "column": "diashow",
+      "description": "Das DJ-Pult von Jesse Jay - hier entstehen die Sets."
+    },
+    {
+      "id": "dj-pult-animation",
+      "type": "image",
+      "src": "DJPult.gif",
+      "thumb": "DJPult.webp",
+      "title": "DJ-Pult (Animation)",
+      "category": "Studio",
+      "date": "2004-06-18",
+      "column": "auswahl",
+      "description": "Animiertes DJ-Pult - Progressive Music Attack."
+    },
+    {
+      "id": "jessejay-banner",
+      "type": "video",
+      "src": "JesseJayBanner.mov",
+      "thumb": "DJPult.webp",
+      "poster": "DJPult.webp",
+      "title": "Jesse Jay Banner",
+      "category": "Promo",
+      "date": "2012-05-16",
+      "column": "diashow",
+      "description": "Banner-Video zum Mitnehmen auf die Tanzflaeche."
+    },
+    {
+      "id": "radio-studio",
+      "type": "video",
+      "src": "RadioStudio.mov",
+      "thumb": "DJPult.webp",
+      "poster": "DJPult.webp",
+      "title": "Radio Studio - Galaxy Space Night",
+      "category": "Radio",
+      "date": "2001-01-01",
+      "column": "backlog",
+      "description": "Blick ins Studio waehrend der Galaxy Space Night auf Radio LoRa."
+    }
+  ]
+}

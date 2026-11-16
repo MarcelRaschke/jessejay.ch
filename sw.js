@@ -4,7 +4,7 @@
  * (mit Cache-Fallback) fuer HTML-Seiten.
  */
 
-const CACHE_VERSION = 'jessejay-v1';
+const CACHE_VERSION = 'jessejay-v2';
 const CACHE_CORE = `${CACHE_VERSION}-core`;
 const CACHE_RUNTIME = `${CACHE_VERSION}-runtime`;
 
@@ -16,6 +16,7 @@ const CORE_ASSETS = [
   './music.html',
   './guestbook.html',
   './contact.html',
+  './gallery.html',
   './css/style.css',
   './js/main.js',
   './assets/fonts/css/fontawesome.min.css',

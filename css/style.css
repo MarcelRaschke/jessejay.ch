@@ -1124,6 +1124,504 @@ p {
     }
 }
 
+/* ============================================
+   Gallery / Diashow / Kanban
+   ============================================ */
+
+.hidden {
+    display: none !important;
+}
+
+.controls-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: var(--spacing-medium);
+    justify-content: space-between;
+}
+
+.view-toggle {
+    display: flex;
+    gap: var(--spacing-small);
+}
+
+.view-btn {
+    background: var(--white);
+    color: var(--primary-color);
+    border: var(--border);
+}
+
+.view-btn.active {
+    background: var(--primary-color);
+    color: var(--white);
+    border-color: var(--primary-color);
+}
+
+.controls-bar .filter-group {
+    flex: 1 1 180px;
+    margin: 0;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: var(--spacing-large);
+}
+
+.gallery-card {
+    background: var(--white);
+    border-radius: var(--border-radius-large);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+}
+
+.gallery-card:hover,
+.gallery-card:focus-visible {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-large);
+    outline: none;
+}
+
+.gallery-card-media {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    background: var(--primary-dark);
+    overflow: hidden;
+}
+
+.gallery-card-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.gallery-card:hover .gallery-card-media img {
+    transform: scale(1.05);
+}
+
+.gallery-card-badge {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background: rgba(8, 6, 74, 0.85);
+    color: var(--white);
+    padding: 2px 10px;
+    border-radius: 999px;
+    font-size: var(--font-size-small);
+}
+
+.gallery-card-body {
+    padding: var(--spacing-medium);
+}
+
+.gallery-card-body h3 {
+    margin-bottom: 6px;
+    font-size: var(--font-size-large);
+}
+
+.gallery-card-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    color: var(--text-light);
+    font-size: var(--font-size-small);
+    margin: 0;
+}
+
+.tag {
+    background: var(--gray-light);
+    color: var(--primary-color);
+    border-radius: 999px;
+    padding: 2px 10px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.tag-column {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+.kanban-board {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(240px, 1fr));
+    gap: var(--spacing-medium);
+    align-items: start;
+}
+
+.kanban-column {
+    background: var(--gray-light);
+    border-radius: var(--border-radius-large);
+    padding: var(--spacing-medium);
+    min-height: 200px;
+    transition: var(--transition);
+}
+
+.kanban-column.drag-over {
+    outline: 2px dashed var(--secondary-color);
+    background: #e8f7fd;
+}
+
+.kanban-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--spacing-small);
+    margin-bottom: var(--spacing-medium);
+}
+
+.kanban-header h3 {
+    margin: 0;
+    font-size: var(--font-size-base);
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.kanban-count {
+    background: var(--primary-color);
+    color: var(--white);
+    border-radius: 999px;
+    min-width: 24px;
+    height: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 0 6px;
+}
+
+.kanban-cards {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-small);
+    min-height: 60px;
+}
+
+.kanban-card {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    cursor: grab;
+}
+
+.kanban-card.dragging {
+    opacity: 0.5;
+}
+
+.kanban-card-media {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    background: var(--primary-dark);
+}
+
+.kanban-card-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.kanban-card-body {
+    padding: var(--spacing-small) var(--spacing-medium);
+}
+
+.kanban-card-body h4 {
+    margin: 0 0 4px;
+    font-size: var(--font-size-small);
+    color: var(--primary-color);
+}
+
+.kanban-card-meta {
+    margin: 0 0 6px;
+    font-size: 0.75rem;
+    color: var(--text-light);
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.kanban-card-actions {
+    display: flex;
+    gap: 6px;
+}
+
+.kanban-card-actions button {
+    flex: 1;
+    border: var(--border);
+    background: var(--white);
+    border-radius: 6px;
+    padding: 4px 0;
+    cursor: pointer;
+    color: var(--primary-color);
+    transition: var(--transition);
+}
+
+.kanban-card-actions button:hover:not(:disabled) {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+.kanban-card-actions button:disabled {
+    opacity: 0.4;
+    cursor: default;
+}
+
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.lightbox[hidden] {
+    display: none;
+}
+
+.lightbox.open {
+    opacity: 1;
+}
+
+.lightbox-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.92);
+}
+
+.lightbox-stage {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox-figure {
+    margin: 0;
+    max-width: min(1200px, 92vw);
+    display: flex;
+    flex-direction: column;
+}
+
+.lightbox-media {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox-media img,
+.lightbox-media video {
+    max-width: 100%;
+    max-height: 70vh;
+    object-fit: contain;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-large);
+}
+
+img.kenburns {
+    animation: kenburns 6s ease-out forwards;
+}
+
+@keyframes kenburns {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.06);
+    }
+}
+
+.lightbox-caption {
+    color: var(--white);
+    text-align: center;
+    padding: var(--spacing-medium);
+}
+
+.lightbox-title {
+    display: block;
+    font-size: var(--font-size-large);
+    font-weight: 700;
+}
+
+.lightbox-desc {
+    display: block;
+    color: var(--gray);
+    font-size: var(--font-size-small);
+}
+
+.lightbox-counter {
+    position: absolute;
+    top: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--white);
+    background: rgba(8, 6, 74, 0.7);
+    padding: 4px 14px;
+    border-radius: 999px;
+    font-size: var(--font-size-small);
+}
+
+.lightbox-progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.lightbox-progress-bar {
+    height: 100%;
+    width: 0;
+    background: var(--accent-color);
+}
+
+.lightbox-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(8, 6, 74, 0.75);
+    color: var(--white);
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.lightbox-btn:hover {
+    background: var(--secondary-color);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 14px;
+    right: 16px;
+}
+
+.lightbox-prev {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.lightbox-next {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.lightbox-actions {
+    position: absolute;
+    bottom: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+}
+
+.lightbox-thumbs {
+    position: absolute;
+    bottom: 12px;
+    left: 0;
+    right: 0;
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding: 6px 16px;
+    justify-content: center;
+}
+
+.lightbox-thumb {
+    flex: 0 0 auto;
+    width: 72px;
+    height: 48px;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 2px solid transparent;
+    padding: 0;
+    cursor: pointer;
+    background: var(--primary-dark);
+}
+
+.lightbox-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.lightbox-thumb.active {
+    border-color: var(--accent-color);
+}
+
+@media (max-width: 992px) {
+    .kanban-board {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .controls-bar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .controls-bar .filter-group {
+        flex: 1 1 auto;
+    }
+
+    .lightbox-prev {
+        left: 8px;
+    }
+
+    .lightbox-next {
+        right: 8px;
+    }
+
+    .lightbox-actions {
+        bottom: 64px;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: var(--spacing-medium);
+    }
+
+    .kanban-board {
+        grid-template-columns: 1fr;
+    }
+
+    .lightbox-media img,
+    .lightbox-media video {
+        max-height: 58vh;
+    }
+}
+
 /* Print Styles */
 @media print {
     .header,
