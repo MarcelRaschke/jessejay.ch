@@ -36,6 +36,11 @@
         <priority>0.7</priority>
     </url>
     <url>
+        <loc>https://djjessejay.ch/event/993.html</loc>
+        <changefreq>yearly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
         <loc>https://djjessejay.ch/event/528.html</loc>
         <changefreq>yearly</changefreq>
         <priority>0.6</priority>
@@ -262,6 +267,11 @@
     </url>
     <url>
         <loc>https://djjessejay.ch/sound/44.html</loc>
+        <changefreq>yearly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://djjessejay.ch/sound/45.html</loc>
         <changefreq>yearly</changefreq>
         <priority>0.5</priority>
     </url>
