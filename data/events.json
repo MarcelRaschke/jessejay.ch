@@ -7,6 +7,13 @@
     "lineup": "Jesse Jay"
   },
   {
+    "eventID": "993",
+    "date": "2018-11-16",
+    "event": "Live @ Club Schlaflos",
+    "eventURL": "https://soundcloud.com/jessejay/jesse-jay-im-club-schlaflos-16112018-mp3",
+    "lineup": "Jesse Jay"
+  },
+  {
     "eventID": "528",
     "date": "2007-09-09",
     "event": "X-Treme @ Club Aaah! Cheap and Chic",
@@ -180,12 +187,5 @@
     "event": "me myself and i",
     "eventURL": null,
     "lineup": null
-  },
-  {
-    "eventID": "993",
-    "date": "2018-11-16",
-    "event": "Live @ Club Schlaflos",
-    "eventURL": "https://soundcloud.com/jessejay/jesse-jay-im-club-schlaflos-16112018-mp3",
-    "lineup": "Jesse Jay"
   }
 ]
