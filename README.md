@@ -41,6 +41,7 @@ jessejay.ch/
 │   ├── events.json     # Event-Daten
 │   ├── guestbook.json  # Gästebuch-Einträge
 │   ├── sounds.json     # Radio-Stream-Daten
+│   ├── soundcloud.json # SoundCloud-Sets (deep data mining)
 │   ├── images.json     # Bild-Daten
 │   └── photos.json     # Galerie-/Diaschau-Daten
 └── assets/
